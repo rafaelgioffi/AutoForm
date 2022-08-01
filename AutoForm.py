@@ -86,134 +86,144 @@ def Acessar():
 
     print("Preenchendo os dados...")
 
-    Preencher('/html/body/div/div/div/form/div/div[2]/div[1]/div/input', nome, 'Preencheu o nome', 'Falha ao preencher o nome...')
-    Preencher('/html/body/div/div/div/form/div/div[2]/div[2]/div[1]/input', cpf, 'Preencheu o CPF', 'Falha ao preencher o CPF...')
-    Preencher('/html/body/div/div/div/form/div/div[2]/div[2]/div[2]/input', rg, 'Preencheu o RG', 'Falha ao preencher o RG...')
-    Preencher('// *[ @ id = "genero"]', genero, 'Preencheu o gênero', 'Falha ao preencher o gênero...')
-    Preencher('//*[@id="orientacaoSexual"]', orientacao, 'Preencheu a orientação sexual', 'Falha ao preencher a orientação sexual...')
-    Preencher('//*[@id="estadoCivil"]', estadocivil, 'Preencheu o estado civil', 'Falha ao preencher o estado civil...')
-    Preencher('//*[@id="inputFoto"]', foto, 'Selecionou a foto', 'Falha ao selecionar a foto...')
-    Preencher('//*[@id="inputCurriculo"]', curriculo, 'Selecionou o currículo', 'Falha ao selecionar o currículo...')
-    Preencher('//*[@id="email"]', email, 'Preencheu o e-mail', 'Falha ao preencher o e-mail...')
-    Preencher('// *[ @ id = "email_conf"]', email, 'Preencheu o e-mail de confirmação', 'Falha ao preencher o e-mail de confirmação...')
-    Preencher('//*[@id="senha"]', senha, 'Preencheu a senha', 'Falha ao preencher a senha...')
-    Preencher('//*[@id="senha_conf"]', senha, 'Preencheu a confirmação da senha', 'Falha ao preencher a confirmação da senha...')
-    Preencher('//*[@id="dataNascimento"]', nascimento, 'Preencheu a data de nascimento', 'Falha ao preencher a data de nascimento...')
-    Preencher('//*[@id="telefone"]', tel, 'Preencheu o telefone', 'Falha ao preencher o telefone...')
-    Preencher('//*[@id="whatsapp"]', whats, 'Preencheu o WhatsApp', 'Falha ao preencher o WhatsApp...')
-    Preencher('//*[@id="nomepai"]', pai, 'Preencheu o nome do pai', 'Falha ao preencher o nome do pai...')
-    Preencher('//*[@id="profissaopai"]', profpai, 'Preencheu a profissão do pai', 'Falha ao preencher a profissão do pai...')
-    Preencher('//*[@id="nomemae"]', mae, 'Preencheu o nome da mãe', 'Falha ao preencher o nome da mãe...')
-    Preencher('//*[@id="profissaomae"]', profmae, 'Preencheu a profissão da mãe', 'Falha ao preencher a profissão da mãe...')
-    Preencher('//*[@id="cep"]', cep, 'Preencheu o CEP', 'Falha ao preencher o CEP...')
-    Preencher('//*[@id="numero"]', numero, 'Preencheu o número', 'Falha ao preencher o número...')
-    Preencher('//*[@id="complemento"]', comp, 'Preencheu o complemento', 'Falha ao preencher o complemento...')
-    Preencher('/html/body/div/div/div/form/div/div[3]/div[4]/div[1]/select', estado_natur, 'Preencheu o estado de naturalidade', 'Falha ao preencher o estado de naturalidade...')
-    navegador.implicitly_wait(10)
-    # cidade naturalidade no final propositalmente...
-    Preencher('//*[@id="raca"]', raca, 'Preencheu a raça', 'Falha ao preencher a raça...')
-    Preencher('/html/body/div/div/div/form/div/div[4]/div[5]/input', face, 'Preencheu o link do Facebook', 'Falha ao preencher o link do Facebook...')
-    Preencher('/html/body/div/div/div/form/div/div[4]/div[6]/div[1]/input', linkedin, 'Preencheu o link do Linkedin', 'Falha ao preencher o link do Linkedin...')
-    Preencher('/html/body/div/div/div/form/div/div[4]/div[6]/div[2]/input', github, 'Preencheu o link do GitHub', 'Falha ao preencher o link do GitHub...')
-    Preencher('//*[@id="escolaridade"]', escola, 'Preencheu a escolaridade', 'Falha ao preencher a escolaridade...')
-    Preencher('//*[@id="situacaoEstudo"]', situacao, 'Preencheu a situação de estudo', 'Falha ao preencher a situação de estudo...')
+    # preenche o estado primeiro e a cidade por último para não ter problema com delay...
+    Preencher('estadoNascimento', estado_natur, 'name')
+
+    Preencher('nome', nome, 'name')
+    Preencher('cpf', cpf, 'name')
+    Preencher('rg', rg, 'name')
+    Preencher('genero', genero, 'name')
+    Preencher('orientacaoSexual', orientacao, 'name')
+    Preencher('estadoCivil', estadocivil, 'name')
+    Preencher('foto', foto, 'name')
+    Preencher('file', curriculo, 'name')
+    Preencher('email', email, 'name')
+    Preencher('email_conf', email, 'name')
+    Preencher('senha', senha, 'name')
+    Preencher('senha_conf', senha, 'name')
+    Preencher('dataNascimento', nascimento, 'name')
+    Preencher('telefone', tel, 'name')
+    Preencher('celular', whats, 'name')
+    Preencher('nomepai', pai, 'name')
+    Preencher('profissaopai', profpai, 'name')
+    Preencher('nomemae', mae, 'name')
+    Preencher('profissaomae', profmae, 'name')
+    Preencher('cep', cep, 'name')
+    Preencher('numero', numero, 'name')
+    Preencher('complemento', comp, 'name')
+    Preencher('raca', raca, 'name')
+    Preencher('facebook', face, 'name')
+    Preencher('linkedin', linkedin, 'name')
+    Preencher('github', github, 'name')
+    Preencher('escolaridade', escola, 'name')
+    Preencher('situacaoEstudo', situacao, 'name')
 
     if estudando == 'Sim':
-        Clicar('/html/body/div/div/div/form/div/div[5]/div[1]/div[3]/div[2]/button[2]', 'Selecionou "Estudando: Sim"', 'Falha ao Selecionar "Estudando: Sim"...')
-        Preencher('//*[@id="turnoEstudo"]', turno, 'Selecionou o turno de estudo', 'Falha ao selecionar o turno de estudo...')
-        Preencher('/html/body/div/div/div/form/div/div[5]/div[2]/div[2]/input', escolaEnt, 'Preencheu a instituição/entidade', 'Falha ao preencher a instituição/entidade...')
+        Clicar('/html/body/div/div/div/form/div/div[5]/div[1]/div[3]/div[2]/button[2]', 'xpath')
+        Preencher('escolaturno', turno, 'name')
+        Preencher('escola', escolaEnt, 'name')
 
-    Preencher('//*[@id="idioma"]', idioma, 'Preencheu o idioma', 'Falha ao preencher o idioma...')
-    Preencher('//*[@id="idiomaNivel"]', nivel, 'Preencheu o nível do idioma', 'Falha ao preencher o nível do idioma...')
-    Preencher('/html/body/div/div/div/form/div/div[5]/div[3]/div[3]/input', obsIdioma, 'Preencheu a observação do idioma', 'Falha ao preencher a observação do idioma...')
-    Preencher('/html/body/div/div/div/form/div/div[6]/div[1]/div/textarea', exp, 'Preencheu as experiências profissionais', 'Falha ao preencher as experiências profissionais...')
-    Preencher('/html/body/div/div/div/form/div/div[6]/div[2]/div/textarea', cursos, 'Preencheu "Outros cursos"', 'Falha ao preencher "Outros cursos"...')
+    Preencher('idioma', idioma, 'name')
+    Preencher('idiomaNivel', nivel, 'name')
+    Preencher('/html/body/div/div/div/form/div/div[5]/div[3]/div[3]/input', obsIdioma, 'xpath')
+    Preencher('empregosAnteriores', exp, 'name')
+    Preencher('outrosCursosAperfeicoamento', cursos, 'name')
 
     if js == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[1]/label/input', 'Selecionou "Javascript: Sim"', 'Falha ao Selecionar "Javascript: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[1]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[1]/select', jsExp, 'Preencheu Experiência com Javascript', 'Falha ao preencher Experiência com Javascript...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[1]/select', jsExp, 'xpath')
 
     if java == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[2]/label/input', 'Selecionou "Java: Sim"', 'Falha ao Selecionar "Java: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[2]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[2]/select', javaExp, 'Preencheu Experiência com Java', 'Falha ao preencher Experiência com Java...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[2]/select', javaExp, 'xpath')
 
     if python == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[3]/label/input', 'Selecionou "Python: Sim"', 'Falha ao Selecionar "Python: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[3]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[3]/select', pythonExp, 'Preencheu Experiência com Python', 'Falha ao preencher Experiência com Python...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[3]/select', pythonExp, 'xpath')
 
     if go == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[4]/label/input', 'Selecionou "Go: Sim"', 'Falha ao Selecionar "Go: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[4]/label/input',  'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[4]/select', goExp, 'Preencheu Experiência com Go', 'Falha ao preencher Experiência com Go...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[4]/select', goExp,  'xpath')
 
     if delphi == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[5]/label/input', 'Selecionou "Delphi: Sim"', 'Falha ao Selecionar "Delphi: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[5]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[5]/select', delphiExp, 'Preencheu Experiência com Delphi', 'Falha ao preencher Experiência com Delphi...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[5]/select', delphiExp, 'xpath')
 
     if c == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[6]/label/input', 'Selecionou "C: Sim"', 'Falha ao Selecionar "C: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[6]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[6]/select', cExp, 'Preencheu Experiência com C', 'Falha ao preencher Experiência com C...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[6]/select', cExp, 'xpath')
 
     if cpp == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[7]/label/input', 'Selecionou "C++: Sim"', 'Falha ao Selecionar "C++: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[7]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[7]/select', cppExp, 'Preencheu Experiência com C++', 'Falha ao preencher Experiência com C++...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[7]/select', cppExp, 'xpath')
 
     if csharp == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[8]/label/input', 'Selecionou "C#: Sim"', 'Falha ao Selecionar "C#: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[8]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[8]/select', csharpExp, 'Preencheu Experiência com C#', 'Falha ao preencher Experiência com C#...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[8]/select', csharpExp, 'xpath')
 
     if r == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[9]/label/input', 'Selecionou "R: Sim"', 'Falha ao Selecionar "R: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[9]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[9]/select', rExp, 'Preencheu Experiência com R', 'Falha ao preencher Experiência com R...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[9]/select', rExp, 'xpath')
 
     if php == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[10]/label/input', 'Selecionou "PHP: Sim"', 'Falha ao Selecionar "PHP: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[10]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[10]/select', phpExp, 'Preencheu Experiência com PHP', 'Falha ao preencher Experiência com PHP...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[10]/select', phpExp, 'xpath')
 
     if rust == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[11]/label/input', 'Selecionou "Rust: Sim"', 'Falha ao Selecionar "Rust: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[11]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[11]/select', rustExp, 'Preencheu Experiência com Rust', 'Falha ao preencher Experiência com Rust...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[11]/select', rustExp, 'xpath')
 
     if kotlin == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[12]/label/input', 'Selecionou "Kotlin: Sim"', 'Falha ao Selecionar "Kotlin: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[12]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[12]/select', kotlinExp, 'Preencheu Experiência com Kotlin', 'Falha ao preencher Experiência com Kotlin...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[12]/select', kotlinExp, 'xpath')
 
     if swift == "Sim":
-        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[13]/label/input', 'Selecionou "Swift: Sim"', 'Falha ao Selecionar "Swift: Sim"...')
+        Clicar('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[13]/label/input', 'xpath')
         navegador.implicitly_wait(5)
-        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[13]/select', swiftExp, 'Preencheu Experiência com Swift', 'Falha ao preencher Experiência com Swift...')
+        Preencher('/html/body/div/div/div/form/div/div[6]/div[3]/div/div/div/div[13]/select', swiftExp, 'xpath')
 
-    Preencher('//*[@id="comoFicouSabendo"]', sabendo, 'Preencheu "Como ficou sabendo do programa"', 'Falha ao preencher "Como ficou sabendo do programa"...')
-    Preencher('/html/body/div/div/div/form/div/div[6]/div[5]/div/textarea', motivo, 'Preencheu "Por qual motivo você quer ser selecionado?"', 'Falha ao preencher "Por qual motivo você quer ser selecionado?"...')
+    Preencher('comoFicouSabendo', sabendo, 'name')
+    Preencher('porqueQuerSerSelecionado', motivo, 'name')
 
-    Preencher('//*[@id="codCidadeNascimento"]', cidade_natur, 'Preencheu a cidade de naturalidade', 'Falha ao preencher a cidade de naturalidade...')
+    Preencher('codCidadeNascimento', cidade_natur, 'name')
 
-    Clicar('/html/body/div/div/div/form/div/div[7]/label[1]/input', 'Marcou "Declaro que li as condições..."', 'Falha ao Selecionar "Declaro que li as condições..."...')
+    Clicar('maior', 'name')
 
     pymsgbox.alert("Processo concluído. Verifique se todos os dados foram preenchidos corretamente e se o envio ocorreu normalmente e clique em OK para finalizar o navegador")
     navegador.close()
 
-def Preencher(campo, form, msgOK, msgFalha):
+def Preencher(campo, form, type):
+    msgOK = f'Preencheu o campo "{campo}"'
+    msgFalha = f'Falha ao preencher o campo "{campo}"...'
     try:
-        navegador.find_element(By.XPATH, campo).send_keys(form)
+        if type == 'name':
+            navegador.find_element(By.NAME, campo).send_keys(form)
+        if type == 'xpath':
+            navegador.find_element(By.XPATH, campo).send_keys(form)
         print(msgOK)
     except:
         print(msgFalha)
 
-def Clicar(campo, msgOK, msgFalha):
+def Clicar(campo, type):
+    msgOK = f'Clicou no campo "{campo}"'
+    msgFalha = f'Falha ao clicar no campo "{campo}"...'
     try:
-        navegador.find_element(By.XPATH, campo).click()
+        if type == 'name':
+            navegador.find_element(By.NAME, campo).click()
+        elif type == 'xpath':
+            navegador.find_element(By.XPATH, campo).click()
         print(msgOK)
     except:
         print(msgFalha)
